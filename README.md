@@ -49,6 +49,9 @@ Follow these steps to set up and use XLGPT:
 6. **Access XLGPT Features**:  
    Open Excel, and navigate to the **XLGPT** ribbon to start using the AI-powered functionalities.
 
+7. **VBE integration**:  
+    Ribbon interface to add VBA code to ThisWorkbook from Clipboard.
+
 ## How It Works
 
 XLGPT acts as an intermediary between Excel and OpenAI, allowing users to send prompts to OpenAI's GPT models and receive responses directly in their spreadsheets. The project is designed to be lightweight, extensible, and easy to integrate with existing Excel workflows.

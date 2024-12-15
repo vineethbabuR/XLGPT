@@ -1,69 +1,69 @@
 ﻿using OpenAIUtility;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace formulaGpt
 {
-    public interface IFormulaControls { }
+    public interface IFormulaControls
+    { }
 
     [ComVisible(true)]
     [ComDefaultInterface(typeof(IFormulaControls))]
     public partial class FormulaResults : UserControl, IFormulaControls
     {
-
-        
         public FormulaResults()
         {
             InitializeComponent();
 
             txtFormula.Clear();
 
-            
-
             var output = ResultStore.Result;
 
-           
-                foreach (var txt in output)
-                {
-                    txtFormula.Text += txt.ToString()
-                            .Replace("\\r", Environment.NewLine)
-                            .Replace("\\", Environment.NewLine)
-                            .Replace("\n", Environment.NewLine)
-                            .Replace("\r", Environment.NewLine)
-                            .Trim()
-                            + Environment.NewLine
-                            + Environment.NewLine
-                            + "'-------------------------- End Of Line -------------------------- "
-                            + Environment.NewLine
-                            + Environment.NewLine;
-                }
-        
-           
-            
-
-           // MessageBox.Show(output.GetType().ToString());
-          //  string txt = string.Empty;
-
-           
-
-
-           // txtFormula.Text = txt;
-
+            DisplayResponse(output);
         }
-    
 
         public void UpdateFormulaTextBox(string text)
         {
-           // FormulaResultsCTP.ShowCTP();
-           
+            // FormulaResultsCTP.ShowCTP();
+        }
+
+        private void DisplayResponse((List<(string explanation, string output)> steps, List<string> finalAnswer) response)
+        {
+            txtFormula.Clear();
+
+            string CleanText(string text)
+            {
+                if (string.IsNullOrWhiteSpace(text)) return string.Empty;
+
+                return text.Replace("\\r", Environment.NewLine)
+                           .Replace("\\n", Environment.NewLine)
+                           .Replace("\\", Environment.NewLine)
+                           .Replace("\n", Environment.NewLine)
+                           .Replace("\r", Environment.NewLine)
+                           .Trim();
+            }
+
+            txtFormula.AppendText("Steps:\r\n");
+            foreach (var step in response.steps)
+            {
+                var cleanedExplanation = CleanText(step.explanation);
+                var cleanedOutput = CleanText(step.output);
+
+                txtFormula.AppendText($"- Explanation: {cleanedExplanation}\r\n");
+                if (!string.IsNullOrWhiteSpace(cleanedOutput))
+                {
+                    txtFormula.AppendText($"  Output: {cleanedOutput}\r\n");
+                }
+                txtFormula.AppendText("\r\n");
+            }
+
+            txtFormula.AppendText("⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬\r\n");
+
+            txtFormula.AppendText("Final Answer:\r\n");
+            foreach (var answer in response.finalAnswer)
+            {
+                var cleanedAnswer = CleanText(answer);
+                txtFormula.AppendText(cleanedAnswer + "\r\n");
+            }
         }
     }
 }

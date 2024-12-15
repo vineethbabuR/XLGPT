@@ -39,7 +39,7 @@
             txtFormula.Name = "txtFormula";
             txtFormula.ReadOnly = true;
             txtFormula.ScrollBars = ScrollBars.Both;
-            txtFormula.Size = new Size(680, 1076);
+            txtFormula.Size = new Size(680, 828);
             txtFormula.TabIndex = 13;
             // 
             // FormulaResults
@@ -50,7 +50,7 @@
             AutoSize = true;
             Controls.Add(txtFormula);
             Name = "FormulaResults";
-            Size = new Size(700, 1103);
+            Size = new Size(650, 1106);
             ResumeLayout(false);
             PerformLayout();
         }

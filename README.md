@@ -13,7 +13,7 @@ XLGPT is a proof-of-concept project that seamlessly integrates OpenAI's cutting-
 
 Here’s a preview of XLGPT in action:
 
-![XLGPT Screenshot](assets/UIImage.JPG)
+![XLGPT Screenshot](Assets/UIImage.JPG)
 
 
 ## Prerequisites

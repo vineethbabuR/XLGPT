@@ -14,7 +14,7 @@ namespace formulaGpt
         {
             InitializeComponent();
 
-            txtFormula.Clear();
+            rtbResult.Clear();
 
             var output = ResultStore.Result;
 
@@ -28,7 +28,7 @@ namespace formulaGpt
 
         private void DisplayResponse((List<(string explanation, string output)> steps, List<string> finalAnswer) response)
         {
-            txtFormula.Clear();
+            rtbResult.Clear();
 
             string CleanText(string text)
             {
@@ -42,28 +42,31 @@ namespace formulaGpt
                            .Trim();
             }
 
-            txtFormula.AppendText("Steps:\r\n");
+            rtbResult.AppendText("Steps:\r\n");
             foreach (var step in response.steps)
             {
                 var cleanedExplanation = CleanText(step.explanation);
                 var cleanedOutput = CleanText(step.output);
 
-                txtFormula.AppendText($"- Explanation: {cleanedExplanation}\r\n");
+                rtbResult.AppendText($"- Explanation: {cleanedExplanation}\r\n");
                 if (!string.IsNullOrWhiteSpace(cleanedOutput))
                 {
-                    txtFormula.AppendText($"  Output: {cleanedOutput}\r\n");
+                    rtbResult.AppendText($"  Output: {cleanedOutput}\r\n");
                 }
-                txtFormula.AppendText("\r\n");
+                rtbResult.AppendText("\r\n");
             }
 
-            txtFormula.AppendText("⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬\r\n");
+            rtbResult.AppendText("⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬\r\n");
 
-            txtFormula.AppendText("Final Answer:\r\n");
+            rtbResult.AppendText("Final Answer:\r\n");
+            
             foreach (var answer in response.finalAnswer)
             {
                 var cleanedAnswer = CleanText(answer);
-                txtFormula.AppendText(cleanedAnswer + "\r\n");
+                rtbResult.SelectionColor = System.Drawing.Color.Blue;
+                rtbResult.AppendText(cleanedAnswer + "\r\n");
             }
+            rtbResult.SelectionColor = System.Drawing.Color.Black;
         }
     }
 }

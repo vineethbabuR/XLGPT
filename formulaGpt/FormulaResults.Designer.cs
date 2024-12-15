@@ -28,19 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtFormula = new TextBox();
+            rtbResult = new RichTextBox();
             SuspendLayout();
             // 
-            // txtFormula
+            // rtbResult
             // 
-            txtFormula.Font = new Font("Cascadia Code", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFormula.Location = new Point(3, 24);
-            txtFormula.Multiline = true;
-            txtFormula.Name = "txtFormula";
-            txtFormula.ReadOnly = true;
-            txtFormula.ScrollBars = ScrollBars.Both;
-            txtFormula.Size = new Size(680, 828);
-            txtFormula.TabIndex = 13;
+            rtbResult.Font = new Font("Cascadia Code", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rtbResult.ForeColor = Color.Black;
+            rtbResult.Location = new Point(3, 18);
+            rtbResult.Name = "rtbResult";
+            rtbResult.Size = new Size(680, 850);
+            rtbResult.TabIndex = 0;
+            rtbResult.Text = "";
             // 
             // FormulaResults
             // 
@@ -48,14 +47,14 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoScroll = true;
             AutoSize = true;
-            Controls.Add(txtFormula);
+            Controls.Add(rtbResult);
             Name = "FormulaResults";
-            Size = new Size(650, 1106);
+            Size = new Size(686, 1106);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private TextBox txtFormula;
+
+        private RichTextBox rtbResult;
     }
 }

@@ -82,7 +82,7 @@ namespace OpenAIUtility
 
                 ChatCompletionOptions options = new()
                 {
-                    Temperature = temp,
+                    Temperature = temp,     
                     FrequencyPenalty = freq_pen,
                     TopP = top_p,
                     ResponseFormat = ChatResponseFormat.CreateJsonSchemaFormat(

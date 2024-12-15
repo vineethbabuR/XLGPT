@@ -8,6 +8,7 @@ XLGPT is a proof-of-concept project that seamlessly integrates OpenAI's cutting-
 - **State-of-the-Art GPT Models**: Leverages OpenAI's advanced GPT models for natural language processing tasks.
 - **Customizable Chat Parameters**: User interface elements to adjust key chat parameters, with more features planned in future updates.
 - **Excel Ribbon Integration**: Provides a dedicated XLGPT ribbon for easy access to AI-powered functionalities.
+- **VBE integration**:  Ribbon interface to add VBA code to ThisWorkbook from Clipboard.
 
 ## Project Overview
 
@@ -49,8 +50,7 @@ Follow these steps to set up and use XLGPT:
 6. **Access XLGPT Features**:  
    Open Excel, and navigate to the **XLGPT** ribbon to start using the AI-powered functionalities.
 
-7. **VBE integration**:  
-    Ribbon interface to add VBA code to ThisWorkbook from Clipboard.
+    
 
 ## How It Works
 

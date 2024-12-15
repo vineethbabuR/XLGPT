@@ -19,4 +19,4 @@ This is a proof of cocept project to integrate OpenAI features with Microsoft Ex
 
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the GNU General Public License v3.0.

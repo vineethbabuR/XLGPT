@@ -72,7 +72,7 @@ namespace formulaGpt
 
         private void trkBarTemp_MouseHover(object sender, EventArgs e)
         {
-            toolTip.AutoPopDelay = 8000;
+            toolTip.AutoPopDelay = 2000;
             toolTip.InitialDelay = 200;
             toolTip.ReshowDelay = 100;
             toolTip.ToolTipTitle = "Temperature Settings";
@@ -87,7 +87,7 @@ namespace formulaGpt
 
         private void trkBarFreqPen_MouseHover(object sender, EventArgs e)
         {
-            toolTip.AutoPopDelay = 8000;
+            toolTip.AutoPopDelay = 2000;
             toolTip.InitialDelay = 200;
             toolTip.ReshowDelay = 100;
             toolTip.ToolTipTitle = "Frequency Penalty Settings";
@@ -102,7 +102,7 @@ namespace formulaGpt
 
         private void trackBarTopP_MouseHover(object sender, EventArgs e)
         {
-            toolTip.AutoPopDelay = 8000;
+            toolTip.AutoPopDelay = 2000;
             toolTip.InitialDelay = 200;
             toolTip.ReshowDelay = 100;
             toolTip.ToolTipTitle = "Nucleus Sampling Settings";
